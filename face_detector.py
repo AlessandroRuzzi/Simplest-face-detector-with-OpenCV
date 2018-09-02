@@ -18,10 +18,10 @@ faces = faceCascade.detectMultiScale(
     minSize=(30, 30)
 
 )
-print ("Found {0} faces!".format(len(faces)))
+print ('there are ',len(faces),' faces in the image.')
 
 '''draw a rectangle around the faces in the image'''
-for (x, y, w, h) in faces:
-    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
-cv2.imshow("Faces found", image)
+for (x_axis, y_axis, w, h) in faces:
+    cv2.rectangle(image, (x_axis, y_axis), (x_axis+w, y_axis+h), (0, 255, 0), 2)
+cv2.imshow("Faces Detect", image)
 cv2.waitKey(0)
